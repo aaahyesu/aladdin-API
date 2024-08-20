@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EeezoBooks</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h1>
+            <span class="eezo">Eeezo</span>
+            <span class="books">BOOKS</span>
+          </h1>
+        </div>
+        <nav class="search">
+          <form class="search-box" action="/bookSearch.html" method="get">
+            <div class="select-wrap">
+              <button class="select-btn" type="button">
+                도서명 <i class="fa-solid fa-angle-down"></i>
+              </button>
+              <ul class="select-options">
+                <li class="option-item" data-value="title">도서명</li>
+                <li class="option-item" data-value="author">저자명</li>
+              </ul>
+            </div>
+            <input type="text" name="query" placeholder="검색어를 입력하세요" />
+            <button class="searchBtn" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </nav>
+        <a href="/like/like.html">
+          <button class="heart">
+            <i class="far fa-heart"></i>
+            <p>찜목록</p>
+          </button>
+        </a>
+      </div>
+      <hr />
+    </header>
+    <main>
+      <section class="bestSeller">
+        <a href="/sort/bestSellerList.html">
+          <h2>베스트 셀러</h2>
+        </a>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!-- <div class="swiper-slide">
+              <img src="./img/book.png" alt="Book Cover" />
+              <div class="text-content">
+                <p class="title">[유아(0~7세) 두 집 이야기]</p>
+                <p class="author">요안나 올레흐 사계절</p>
+                <div class="price-discount">
+                  <i class="discount">10%</i>
+                  <i class="price">18,900원</i>
+                </div>
+                <p class="content">
+                  지금 사회는 얼마나 평등해졌을까? 정답을 찾아 능독적으로 읽는
+                  성평등 그림책. 두 점에는 각각 다른 환경이 주어집니다. 지금
+                  사회는 얼마나 달라졌을까요?
+                </p>
+              </div>
+            </div> -->
+          </div>
+
+          <div class="swiper-button-next">
+            <i class="fa-solid fa-chevron-right"></i>
+          </div>
+          <div class="swiper-button-prev">
+            <i class="fa-solid fa-chevron-left"></i>
+          </div>
+        </div>
+      </section>
+      <hr class="bottomHr" />
+      <section class="newBooks">
+        <h2>이번 달 새로 나온 도서</h2>
+        <a href="/sort/newBookList.html">
+          <p class="linkDetail">> 더보기</p>
+        </a>
+        <div class="book-list newBooks-list"></div>
+      </section>
+      <hr class="bottomHr" />
+      <section class="recommended">
+        <div class="intro">
+          <h3>
+            <span class="eezo">Eeezo</span>
+            <span class="books">BOOKS</span>
+            <span class="eezo">Picks</span>
+          </h3>
+          <p class="subtitle">주목할만한 신간을 추천해드려요!</p>
+          <a href="/sort/remarkableList.html"
+            ><button>더 많은 신간 도서 보러가기</button></a
+          >
+        </div>
+        <div class="book-list recommended-list"></div>
+      </section>
+      <hr class="bottomHr" />
+      <section class="blogBestSeller">
+        <h2>블로그 베스트셀러</h2>
+        <a href="/sort/blogBestSeller.html">
+          <p class="linkDetail">> 더보기</p>
+        </a>
+        <div class="book-list blogBestSeller-list"></div>
+      </section>
+      <div class="modal-overlay">
+        <div class="modal-content">
+          <button class="close-btn">&times;</button>
+          <div class="book-info">
+            <img src="./img/book.png" class="book-cover" />
+            <div class="book-details">
+              <h2>[국내도서] 미술빨을 올기 (200만 부 기념 스페셜 에디션)</h2>
+              <p class="author">
+                기시미 이치로 저자(글) 고미 후미타케 저자(글) 전경아 번역 김정운
+                감수
+              </p>
+              <p class="publish-date">인플루엔셜 2022년 12월 28일</p>
+              <p class="price"><span class="discount">10%</span> 14,310원</p>
+              <div class="rating">
+                <span class="stars">★★★★★</span>
+                <span class="score">9.44</span>
+              </div>
+              <p class="description">
+                Reading Classics with Redbud 시리즈 8권. 어린이들에게 영어로 된
+                세계명작 동화들을 읽게 함으로써 영어 문장을 읽고 이해하는 능력을
+                갖도록 도와주는 시리즈로 어린이들에게 알맞은 동화나 동시를
+                포함하고 있다. 각각의 스토리마다 어린이들에게 적합한, 결코
+                지나치지 않는 교훈과 재미가 있다.
+              </p>
+              <button class="heart">
+                <i class="fa-regular fa-heart" style="color: #ff5c5c"></i>
+              </button>
+              <button class="more-info">알라딘으로 이동 →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

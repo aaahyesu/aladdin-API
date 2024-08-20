@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="queryType" content="BlogBest" />
+    <title>EeezoBooks</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="/index.html">
+          <div class="logo">
+            <h1>
+              <span class="eezo">Eeezo</span><span class="books">BOOKS</span>
+            </h1>
+          </div>
+        </a>
+        <nav class="search">
+          <form class="search-box" id="searchForm">
+            <div class="select-wrap">
+              <button class="select-btn" type="button">
+                도서명 <i class="fa-solid fa-angle-down"></i>
+              </button>
+              <ul class="select-options">
+                <li class="option-item" data-value="title">도서명</li>
+                <li class="option-item" data-value="author">저자명</li>
+              </ul>
+            </div>
+            <input
+              type="text"
+              name="query"
+              id="query"
+              placeholder="검색어를 입력하세요"
+            />
+            <button class="searchBtn" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+        </nav>
+        <a href="/like/like.html">
+          <button class="heart">
+            <i class="far fa-heart"></i>
+            <p>찜목록</p>
+          </button>
+        </a>
+      </div>
+      <hr />
+    </header>
+    <main>
+      <div class="bookSearch">
+        <div class="left">
+          <h3>
+            <span class="keyWord" id="searchKeyword">블로거 베스트셀러</span>
+            <span class="text"> 100개 도서</span>
+          </h3>
+          <div class="sortList">
+            <div class="sortName">
+              <p>정렬</p>
+              <i class="text"><i class="fa-solid fa-rotate"></i>초기화</i>
+            </div>
+            <div class="sortType">
+              <a href="/newBookList.html"> <span>신간 전체</span></a>
+              <a href="/remarkableList.html"><span>주목할만한 신간</span></a>
+              <a href="/bestSellerList.html"><span>베스트셀러</span></a>
+              <a href="/blogBestSeller.html"
+                ><span class="highlight">블로거 베스트셀러</span></a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="book-list searchList" id="bookList"></div>
+      </div>
+      <div class="pagination" id="pagination"></div>
+    </main>
+    <div class="modal-overlay">
+      <div class="modal-content">
+        <button class="close-btn">&times;</button>
+        <div class="book-info">
+          <img src="./img/book.png" class="book-cover" />
+          <div class="book-details">
+            <h2>[국내도서] 미술빨을 올기 (200만 부 기념 스페셜 에디션)</h2>
+            <p class="author">
+              기시미 이치로 저자(글) 고미 후미타케 저자(글) 전경아 번역 김정운
+              감수
+            </p>
+            <p class="publish-date">인플루엔셜 2022년 12월 28일</p>
+            <p class="price"><span class="discount">10%</span> 14,310원</p>
+            <div class="rating">
+              <span class="stars">★★★★★</span>
+              <span class="score">9.44</span>
+            </div>
+            <p class="description">
+              Reading Classics with Redbud 시리즈 8권. 어린이들에게 영어로 된
+              세계명작 동화들을 읽게 함으로써 영어 문장을 읽고 이해하는 능력을
+              갖도록 도와주는 시리즈로 어린이들에게 알맞은 동화나 동시를
+              포함하고 있다. 각각의 스토리마다 어린이들에게 적합한, 결코
+              지나치지 않는 교훈과 재미가 있다.
+            </p>
+            <button class="heart">
+              <i class="fa-regular fa-heart" style="color: #ff5c5c"></i>
+            </button>
+            <button class="more-info">알라딘으로 이동 →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./sort.js"></script>
+  </body>
+</html>

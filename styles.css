@@ -1,0 +1,774 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+hr {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #eaeaea; /* 원하는 색상으로 변경 */
+  margin: 0;
+  margin-top: 15px;
+}
+.bottomHr {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  margin-top: 30px;
+}
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 10px 20px 0;
+  color: #333;
+}
+
+header {
+  background-color: white;
+  padding: 20px 0;
+}
+
+header .container {
+  width: 90%;
+  max-width: 1200px; /* 최대 너비 설정 */
+  margin: 0 auto; /* 중앙 정렬 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eezo {
+  font-size: 45px;
+  font-weight: bold;
+  color: #3a9945;
+}
+
+.books {
+  font-size: 30px;
+  font-weight: 100;
+  color: #1e1e1e;
+}
+
+header .logo h1 {
+  margin: 0;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.select-wrap {
+  position: relative;
+}
+
+.select-btn {
+  width: 120px;
+  padding: 10px;
+  background-color: white;
+  border: none;
+  border-right: 1px solid #ccc;
+  border-radius: 20px 0 0 20px;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select-options {
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  display: none;
+  z-index: 100;
+  list-style: none;
+  padding: 0;
+}
+
+.select-options.show {
+  display: block;
+}
+
+.option-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.option-item:hover {
+  background-color: #3a9945;
+  color: white;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  height: 100%;
+  margin-right: 20px;
+  flex: 1;
+  border-radius: 0 20px 20px 0;
+}
+
+.search-box button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding-right: 10px;
+}
+
+.heart {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.heart p {
+  margin-left: 8px;
+}
+
+.heart i {
+  transition: color 0.3s;
+}
+
+.heart i:hover {
+  color: red;
+  cursor: pointer;
+}
+
+/* main */
+/* section1 */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  margin-left: 10px;
+}
+
+/* 슬라이드 */
+/* 공통 슬라이드 스타일 */
+/* 전체 슬라이더 컨테이너에 왼쪽 여백 추가 */
+.swiper-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* 첫 번째 슬라이드 스타일 */
+.swiper-slide:nth-of-type(1) {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+}
+
+.swiper-slide:nth-of-type(1) img {
+  width: 35%;
+  object-fit: cover;
+  box-shadow: 5px 5px 5px #eaeaea;
+}
+
+.swiper-slide:nth-of-type(1) .text-content {
+  width: 50%;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-content .title {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.text-content .author {
+  font-size: 15px;
+  color: #6c6c6c;
+  padding-bottom: 20px;
+}
+
+.text-content .discount {
+  color: #3a9945;
+  font-weight: bold;
+}
+.text-content .price {
+  font-size: 15px;
+  color: black;
+}
+.text-content .discount,
+.text-content .price {
+  display: inline-block;
+  margin-right: 10px;
+  padding-bottom: 20px;
+}
+
+.text-content .content {
+  font-size: 15px;
+  color: #6c6c6c;
+  line-height: 1.6;
+}
+.swiper-slide:not(:nth-of-type(1)) .title {
+  font-size: 15px;
+  color: black;
+  font-weight: 400;
+  left: 0;
+}
+/* 첫 번째 슬라이드가 아닐 때 숨길 요소들 */
+.swiper-slide:not(:nth-of-type(1)) .author,
+.swiper-slide:not(:nth-of-type(1)) .discount,
+.swiper-slide:not(:nth-of-type(1)) .price,
+.swiper-slide:not(:nth-of-type(1)) .content {
+  display: none;
+}
+
+.swiper-slide:nth-of-type(1) .text-content i {
+  display: inline-block;
+}
+
+/* 나머지 슬라이드 스타일 */
+.swiper-slide:not(:nth-of-type(1)) {
+  flex-direction: column;
+  align-items: center;
+  width: 13%;
+  margin-top: 60px;
+}
+
+.swiper-slide:not(:nth-of-type(1)) .book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.swiper-slide:not(:nth-of-type(1)) img {
+  width: 140px;
+  height: 200px;
+  margin: 0 5px;
+  box-shadow: 5px 5px 5px #eaeaea;
+}
+
+.swiper-slide:not(:nth-of-type(1)) .text-content {
+  margin-top: 10px;
+  padding-left: 5px;
+}
+
+/* 나머지 슬라이드의 i 태그 숨기기 */
+.swiper-slide:not(:nth-of-type(1)) .book i {
+  display: none;
+}
+
+/* Swiper 버튼 스타일 */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 40px;
+  height: 40px;
+  border: 2px solid lightgray;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  color: #616161;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-button-prev {
+  position: absolute;
+  left: 0;
+}
+
+/* 버튼에 있는 아이콘 스타일 */
+.swiper-button-prev i,
+.swiper-button-next i {
+  display: inline-block;
+  font-size: 20px;
+  color: #333333a6;
+}
+
+/* Swiper 버튼 스타일 */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}
+
+/* 섹션의 상대적인 위치 설정 */
+.bestSeller {
+  position: relative;
+  height: 400px;
+}
+
+/* section2 */
+.newBooks {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.book {
+  flex: 1 1 calc(20% - 20px);
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.book img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 5px 5px 5px #eaeaea;
+}
+
+.book-list .title {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.book-list .author {
+  font-size: 15px;
+  font-weight: normal;
+  color: #808080;
+}
+
+.linkDetail {
+  text-align: right;
+  margin-right: 45px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.linkDetail:hover {
+  color: #307d39;
+  text-decoration: underline;
+}
+
+/* section3 */
+h3 {
+  white-space: nowrap;
+}
+h3 .eezo {
+  font-weight: 400;
+  font-size: 35px;
+}
+h3 .books {
+  font-size: 20px;
+  font-weight: 200;
+}
+.recommended {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: #f3f9f2;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: 40px;
+}
+.recommended .intro {
+  width: 30%;
+  padding: 25px 70px;
+}
+
+.recommended .book-list {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap; /* 책 목록을 여러 줄로 배치 */
+  padding: 20px; /* 내부 여백 추가 */
+  box-sizing: border-box; /* padding을 포함한 너비 계산 */
+}
+
+.recommended .subtitle {
+  padding: 10px 0;
+  font-size: 19px;
+  font-weight: 600;
+}
+.recommended button {
+  margin-top: 10px;
+  color: white;
+  height: 42px;
+  width: 220px;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #40a01e;
+  border-radius: 15px;
+  border: none;
+}
+
+/* section4 */
+.blogBestSeller {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+}
+
+/* ------------ */
+/*검색 결과 화면*/
+
+/* 전체 레이아웃 */
+.bookSearch {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.left {
+  width: 20%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 20px; /* h3와 sort 사이의 간격 */
+}
+
+/* 검색 결과 헤딩 */
+.bookSearch h3 {
+  position: absolute;
+  left: -15px;
+  margin-bottom: 20px;
+}
+
+h3 .keyWord {
+  font-size: 25px;
+  font-weight: bold;
+  color: #3a9945;
+}
+
+/* 정렬 박스 스타일 */
+.sortList {
+  position: relative;
+  top: 50px;
+  left: -15px;
+  padding: 20px;
+  text-align: left;
+}
+
+.sortName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.sortName i {
+  color: #767675ac;
+}
+.sortName .text {
+  font-weight: 100;
+  color: #767675;
+  font-size: medium;
+}
+
+/* 정렬 목록 스타일 */
+.sortType {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+  line-height: 40px;
+}
+.sortType .highlight {
+  border: 1.8px solid #3a9945;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 10px 50px 10px 10px;
+}
+
+.sortType span {
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.sortType span:hover {
+  color: #3a9945;
+}
+
+.sortType span.selected {
+  font-weight: bold; /* 선택된 정렬 항목을 강조 */
+  color: #3a9945; /* 선택된 항목의 색상 변경 */
+}
+
+/* 책 리스트 스타일 */
+.searchList {
+  width: 78%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 60px;
+}
+
+.book {
+  width: 100%;
+  max-width: 150px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+.image-container {
+  position: relative;
+}
+.book img {
+  width: 100%;
+  display: block;
+  height: auto;
+  border-radius: 5px;
+  transition: opacity 0.5s ease;
+}
+
+/* 오버레이 스타일 */
+.book .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: opacity 0.3s ease;
+  border-radius: 5px;
+  pointer-events: none; /* hover 전에는 클릭되지 않도록 */
+}
+.book:hover img {
+  opacity: 0.5;
+}
+.image-container:hover .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.book .overlay i {
+  color: white;
+  font-size: 25px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+/* 책 제목과 저자 텍스트 스타일 */
+.book .title,
+.book .author {
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+}
+
+.book .title {
+  font-weight: bold;
+  padding-top: 15px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* 원하는 줄 수로 설정 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px; /* 적절한 너비로 설정 */
+}
+.book .author {
+  font-weight: 400;
+  font-size: 15px;
+  color: #808080;
+}
+
+/* 페이지네이션 스타일 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.pagination span,
+.pagination button {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.pagination span {
+  padding-top: 10px;
+}
+.pagination button {
+  background-color: #3a9945;
+  color: white;
+  border: none;
+}
+
+.pagination span.active {
+  background-color: #3a9945;
+  color: white;
+}
+
+/* 모달 디자인 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; /* 페이지 로드 시 모달이 보이지 않도록 설정 */
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 50px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.book-info {
+  display: flex;
+  gap: 20px;
+}
+
+.book-cover {
+  width: 200px;
+  height: auto;
+}
+
+.book-details {
+  flex: 1;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.author,
+.publish-date {
+  color: #666;
+  margin: 5px 0;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.discount {
+  color: #3a9945;
+}
+
+.rating {
+  margin: 10px 0;
+}
+
+.stars {
+  color: #f1c40f;
+}
+
+.description {
+  margin: 10px 0;
+  color: #616161;
+  line-height: 23px;
+}
+
+.more-info {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  color: black;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: transparent;
+  font-weight: bold;
+  cursor: pointer;
+}
+.modal-content .fa-heart {
+  position: absolute;
+  bottom: 15px;
+  left: 140px;
+  border: 2px solid lightgray;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+/* 오버레이가 hover 시에 작동하도록 설정 */
+.image-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container:hover .overlay {
+  display: flex;
+}
